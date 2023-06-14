@@ -1,47 +1,45 @@
 module.exports = {
 	components: {
-		securitySchemes: {
-			ApiKeyAuth: {
-				type: 'apiKey',
-				name: 'Authorization',
-				in: 'header',
-			},
-		},
 		schemas: {
-			user: {
+			task: {
 				type: 'object',
 				properties: {
 					_id: {
 						type: 'objectId',
-						description: 'user identification number',
+						description: 'task identification number',
 						example: '6201064b0028de7866e2b2c4',
 					},
-					name: {
+					title: {
 						type: 'string',
-						description: 'user name',
-						example: 'Jon Doe',
+						description: "task's title",
+						example: 'make an excellent readme',
 					},
-					email: {
-						type: 'string',
-						description: 'user email',
-						example: 'jon@doe.com',
-					},
-					password: {
-						type: 'string',
-						description: 'user password',
-						example: '123456',
-					},
-					age: {
-						type: 'number',
-						description: 'user age',
-						example: '32',
-					},
-					role: {
-						type: 'string',
-						description: 'user role',
-						example: 'user',
+					completed: {
+						type: 'boolean',
+						description: 'The status of the task',
+						example: false,
 					},
 				},
+			},
+			TaskInput: {
+				type: 'object',
+				properties: {
+					title: {
+						type: 'string',
+						description: "Task's title",
+						example: 'make an excellent readme',
+					},
+					completed: {
+						type: 'boolean',
+						description: 'The status of the task',
+						example: false,
+					},
+				},
+			},
+			_id: {
+				type: 'objectId',
+				description: 'An id of a task',
+				example: '6201064b0028de7866e2b2c4',
 			},
 		},
 	},

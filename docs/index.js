@@ -1,9 +1,9 @@
 const basicInfo = require('./basicinfo')
 const components = require('./components')
-const users = require('./users')
+const tasks = require('./tasks')
 
 module.exports = {
 	...basicInfo,
-	...users,
+	...tasks,
 	...components,
 }
