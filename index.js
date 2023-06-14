@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const swaggerUI = require('swagger-ui-express')
+const docs = require('./docs/index')
 
 require('dotenv').config()
 
