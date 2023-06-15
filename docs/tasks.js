@@ -47,7 +47,7 @@ module.exports = {
 				},
 			},
 		},
-		'/tasks/id/{_id}': {
+		'/tasks/update/id/{_id}': {
 			put: {
 				tags: {
 					Tasks: 'Update a task',
@@ -77,6 +77,39 @@ module.exports = {
 					500: { description: 'Server error' },
 				},
 			},
+		},
+		'/tasks/complete/id/{_id}': {
+			put: {
+				tags: {
+					Tasks: 'Complete a task',
+				},
+				description: 'Complete Task',
+				operationId: 'completeTask',
+				parameters: [
+					{
+						name: '_id',
+						in: 'path',
+						schema: {
+							$ref: '#/components/schemas/_id',
+						},
+						description: 'Id of Task to be completed',
+					},
+				],
+				requestBody: {
+					content: {
+						'application/json': {
+							schema: { $ref: '#/components/schemas/TaskInput' },
+						},
+					},
+				},
+				responses: {
+					200: { description: 'Task completed successfully' },
+					404: { description: 'Task not found' },
+					500: { description: 'Server error' },
+				},
+			},
+		},
+		'/tasks/id/{_id}': {
 			delete: {
 				tags: {
 					Tasks: 'Delete a task',

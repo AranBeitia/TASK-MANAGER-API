@@ -2,12 +2,15 @@ const express = require('express')
 const app = express()
 const swaggerUI = require('swagger-ui-express')
 const docs = require('./docs/index')
+const cors = require('cors')
 
 require('dotenv').config()
 
 const PORT = process.env.PORT || 3001
 
 const { dbConnection } = require('./config/config')
+
+app.use(cors())
 
 app.use(express.json())
 
