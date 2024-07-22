@@ -1,7 +1,7 @@
 version: '3.6'
 services:
-  api:
-    container_name: api
+  apiTasks:
+    container_name: apiTasks
     build:
       context: ./
       dockerfile: Dockerfile
