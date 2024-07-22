@@ -1,7 +1,6 @@
-version: '3.6'
 services:
-  apiTasks:
-    container_name: apiTasks
+  task_manager_api:
+    container_name: task_manager_api
     build:
       context: ./
       dockerfile: Dockerfile
@@ -13,7 +12,7 @@ services:
     ports:
       - 3000:3000
     tty: true
-  db:
+  task_manager_db:
     image: mongo:latest
     ports:
       - 27017:27017
